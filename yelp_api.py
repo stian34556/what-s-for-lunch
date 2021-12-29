@@ -1,14 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Yelp Fusion API code sample.
-This program demonstrates the capability of the Yelp Fusion API
-by using the Search API to query for businesses by a search term and location,
-and the Business API to query additional information about the top result
-from the search query.
-Please refer to http://www.yelp.com/developers/v3/documentation for the API
-documentation.
-This program requires the Python requests library, which you can install via:
-`pip install -r requirements.txt`.
 Sample usage of the program:
 `python sample.py --term="bars" --location="San Francisco, CA"`
 """
@@ -20,7 +11,6 @@ import pprint
 import requests
 import sys
 import urllib
-
 
 # This client code can run on Python 2.x or 3.x.  Your imports can be
 # simpler if you only need one of those.
@@ -35,24 +25,17 @@ except ImportError:
     from urllib import quote
     from urllib import urlencode
 
-
-# Yelp Fusion no longer uses OAuth as of December 7, 2017.
-# You no longer need to provide Client ID to fetch Data
-# It now uses private keys to authenticate requests (API Key)
-# You can find it on
-# https://www.yelp.com/developers/v3/manage_app
 API_KEY= 'fg7eyQguEvmPsj4s2jsB_ye2iSokB74KcubFseRWjQspbYWs4JxfJkdPggG0nnkvows95Z_KHxkjElREpZ11rFs2c_bed_ejuyjZRLqEp_KFm_4wN4CnQjpixgbMYXYx'
-
 
 # API constants, you shouldn't have to change these.
 API_HOST = 'https://api.yelp.com'
 SEARCH_PATH = '/v3/businesses/search'
 BUSINESS_PATH = '/v3/businesses/'  # Business ID will come after slash.
 
-
-# Defaults for our simple example.
 DEFAULT_TERM = 'dinner'
-DEFAULT_LOCATION = 'Vancouver, BC'
+DEFAULT_LOCATION = '2929 Barnet Hwy, Coquitlam, BC V3B 5R5'
+DEFAULT_PRICE = '2'
+DEFAULT_RADIUS = '1000'
 SEARCH_LIMIT = 3
 
 
@@ -81,8 +64,8 @@ def request(host, path, api_key, url_params=None):
     return response.json()
 
 
-def search(api_key, term, location):
-    """Query the Search API by a search term and location.
+def search(api_key, term, location, price, radius):
+    """Query the Search API by a search term and location. + price, distance
     Args:
         term (str): The search term passed to the API.
         location (str): The search location passed to the API.
@@ -93,6 +76,8 @@ def search(api_key, term, location):
     url_params = {
         'term': term.replace(' ', '+'),
         'location': location.replace(' ', '+'),
+        'price' : price.replace(' ', '+'),
+        'radius' : radius.replace(' ', '+'),
         'limit': SEARCH_LIMIT
     }
     return request(API_HOST, SEARCH_PATH, api_key, url_params=url_params)
@@ -110,13 +95,13 @@ def get_business(api_key, business_id):
     return request(API_HOST, business_path, api_key)
 
 
-def query_api(term, location):
+def query_api(term, location, price, radius):
     """Queries the API by the input values from the user.
     Args:
         term (str): The search term to query.
         location (str): The location of the business to query.
     """
-    response = search(API_KEY, term, location)
+    response = search(API_KEY, term, location, price, radius)
 
     businesses = response.get('businesses')
 
@@ -133,6 +118,7 @@ def query_api(term, location):
 
     print(u'Result for business "{0}" found:'.format(business_id))
     pprint.pprint(response, indent=2)
+    #print(response[0].categories)
 
 
 def main():
@@ -143,11 +129,16 @@ def main():
     parser.add_argument('-l', '--location', dest='location',
                         default=DEFAULT_LOCATION, type=str,
                         help='Search location (default: %(default)s)')
+    parser.add_argument('-p', '--price', dest='price', default=DEFAULT_PRICE,
+                        type=str, help='Search price (default: %(default)s)')
+    parser.add_argument('-r', '--radius', dest='radius', default=DEFAULT_RADIUS,
+                        type=str, help='Search radius (default: %(default)s)')
+    
 
     input_values = parser.parse_args()
 
     try:
-        query_api(input_values.term, input_values.location)
+        query_api(input_values.term, input_values.location, input_values.price, input_values.radius)
     except HTTPError as error:
         sys.exit(
             'Encountered HTTP error {0} on {1}:\n {2}\nAbort program.'.format(
