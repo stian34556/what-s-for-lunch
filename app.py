@@ -21,6 +21,7 @@ def home():
 def find():
     
     print(request.form.get("Food"))
-    yelp_api.search_result()  
+    #yelp_api.hello("hello") 
+    print 
 
     return render_template("find.html")
