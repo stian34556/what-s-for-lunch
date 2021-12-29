@@ -1,11 +1,22 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 
-<html lang="en">
-    <head>
-        <meta name="viewport" content="intitial-scale=1, width=device-width">
-        <title>Lunch Picker</title>
-    </head>
-    <body>
-        <h1>Lunch Picker</h1>
-    </body>
-</html>
+{% block body %}
+    <h1>Whats for lunch?</h1>
+    <form action="/new" method = "post">
+        <input autocomplete="off" placeholder="Food" type = "text">
+        <input autocomplete="off" placeholder="Location" type = "text">
+        <select>
+            <option disable selected>Suggested Searches</option>
+            <option>Chinese</option>
+            <option>Alcohol</option>
+            <option>Halal</option>
+        </select>
+        <select>
+            <option disable selected>Price Range</option>
+            <option>$</option>
+            <option>$$</option>
+            <option>$$$</option>
+        </select>
+        <input type = "submit" value="search">
+    </form>
+{% endblock %}
