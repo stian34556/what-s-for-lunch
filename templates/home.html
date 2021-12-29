@@ -4,8 +4,8 @@
 
 {% block body %}
     <h1>Whats for lunch?</h1>
-    <form action="/search" method = "post">
-        <input autocomplete="off" placeholder="Food" type = "text">
+    <form action="/find" method = "post">
+        <input autocomplete="off" placeholder="Food" type = "text" name = "Food">
         <input autocomplete="off" placeholder="Location" type = "text">
         <select>
             <option disable selected>Suggested Searches</option>
