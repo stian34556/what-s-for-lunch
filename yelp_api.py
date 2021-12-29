@@ -123,7 +123,7 @@ def query_api(term, location, price, radius):
     print(businesses[0]['price'])
     print(businesses[0]['image_url'])
 
-def main():
+def search_result():
     parser = argparse.ArgumentParser()
 
     parser.add_argument('-q', '--term', dest='term', default=DEFAULT_TERM,
