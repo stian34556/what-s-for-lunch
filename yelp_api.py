@@ -60,8 +60,8 @@ def request(host, path, api_key, url_params=None):
     print(u'Querying {0} ...'.format(url))
 
     response = requests.request('GET', url, headers=headers, params=url_params)
-
     return response.json()
+    #return response
 
 
 def search(api_key, term, location, price, radius):
@@ -117,9 +117,11 @@ def query_api(term, location, price, radius):
     response = get_business(API_KEY, business_id)
 
     print(u'Result for business "{0}" found:'.format(business_id))
-    pprint.pprint(response, indent=2)
-    #print(response[0].categories)
-
+    #pprint.pprint(response, indent=2) 
+    print(businesses[0]['name'])
+    print(businesses[0]['rating'])
+    print(businesses[0]['price'])
+    print(businesses[0]['image_url'])
 
 def main():
     parser = argparse.ArgumentParser()
