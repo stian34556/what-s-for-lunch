@@ -1,6 +1,5 @@
-
 from flask import Flask, render_template, request
-from yelp_api import *
+import yelp_api
 
 app = Flask(__name__)
 
@@ -22,6 +21,6 @@ def home():
 def find():
     
     print(request.form.get("Food"))
-    search_result()   
+    yelp_api.search_result()  
 
     return render_template("find.html")
