@@ -1,15 +1,17 @@
 {% extends "base.html" %}
 
+{% block title %} Lunch Picker {% endblock %}
+
 {% block body %}
     <h1>Whats for lunch?</h1>
-    <form action="/new" method = "post">
+    <form action="/search" method = "post">
         <input autocomplete="off" placeholder="Food" type = "text">
         <input autocomplete="off" placeholder="Location" type = "text">
         <select>
             <option disable selected>Suggested Searches</option>
-            <option>Chinese</option>
-            <option>Alcohol</option>
-            <option>Halal</option>
+            {% for food in suggested %}
+            <option> {{ food }}</option>
+            {% endfor %}
         </select>
         <select>
             <option disable selected>Price Range</option>
