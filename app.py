@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import yelp_api
 
 app = Flask(__name__)
 
@@ -19,10 +20,19 @@ def home():
 @app.route("/find", methods = ["POST"])
 def find():
     
-    print(request.form.get("Food"))
-    print(request.form.get("Location"))
-    print(request.form.get("suggested"))
-    print(request.form.get("price"))
-    #yelp_api.hello("hello") 
+    term = request.form.get("Food")
+    location = request.form.get("Location")
+    price = request.form.get("price")
+    if (price == "$"):
+        price = "1"
+    elif (price == "$$"):
+        price = "2"
+    elif (price == "$$$"):
+        price = "3"
+    else:
+        price = yelp_api.DEFAULT_PRICE
+    radius = "1000"
+    result = yelp_api.search_result(term, location, price, radius)
+    print(result)
 
     return render_template("find.html")

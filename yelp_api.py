@@ -111,36 +111,30 @@ def query_api(term, location, price, radius):
 
     business_id = businesses[0]['id']
 
-    print(u'{0} businesses found, querying business info ' \
+    """print(u'{0} businesses found, querying business info ' \
         'for the top result "{1}" ...'.format(
             len(businesses), business_id))
+    """
     response = get_business(API_KEY, business_id)
 
     print(u'Result for business "{0}" found:'.format(business_id))
     #pprint.pprint(response, indent=2) 
+    """
     print(businesses[0]['name'])
     print(businesses[0]['rating'])
     print(businesses[0]['price'])
     print(businesses[0]['image_url'])
-
-def search_result():
-    parser = argparse.ArgumentParser()
-
-    parser.add_argument('-q', '--term', dest='term', default=DEFAULT_TERM,
-                        type=str, help='Search term (default: %(default)s)')
-    parser.add_argument('-l', '--location', dest='location',
-                        default=DEFAULT_LOCATION, type=str,
-                        help='Search location (default: %(default)s)')
-    parser.add_argument('-p', '--price', dest='price', default=DEFAULT_PRICE,
-                        type=str, help='Search price (default: %(default)s)')
-    parser.add_argument('-r', '--radius', dest='radius', default=DEFAULT_RADIUS,
-                        type=str, help='Search radius (default: %(default)s)')
+    """
+    places = []
+    for x in range(3):
+        places.append([businesses[x]['name'], businesses[x]['rating'], businesses[x]['price'], businesses[x]['image_url']])
     
+    return places
 
-    input_values = parser.parse_args()
+def search_result(term, location, price, radius):
 
     try:
-        query_api(input_values.term, input_values.location, input_values.price, input_values.radius)
+        return query_api(term, location, price, radius)
     except HTTPError as error:
         sys.exit(
             'Encountered HTTP error {0} on {1}:\n {2}\nAbort program.'.format(
