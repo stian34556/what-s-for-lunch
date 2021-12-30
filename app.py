@@ -13,6 +13,11 @@ FOOD = [
 def login():
     return render_template("login.html")
 
+@app.route('/sign-up', methods=['GET', 'POST'])
+def sign_up():
+    return render_template("sign_up.html")
+
+
 @app.route("/")
 def home():
     return render_template("home.html", suggested=FOOD)
