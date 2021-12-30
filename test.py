@@ -35,7 +35,7 @@ BUSINESS_PATH = '/v3/businesses/'  # Business ID will come after slash.
 DEFAULT_TERM = 'dinner'
 DEFAULT_LOCATION = '2929 Barnet Hwy, Coquitlam, BC V3B 5R5'
 DEFAULT_PRICE = '2'
-DEFAULT_RADIUS = '10000'
+DEFAULT_RADIUS = '1000'
 SEARCH_LIMIT = 3
 
 
@@ -112,26 +112,37 @@ def query_api(term, location, price, radius):
 
     business_id = businesses[0]['id']
 
+    """print(u'{0} businesses found, querying business info ' \
+        'for the top result "{1}" ...'.format(
+            len(businesses), business_id))
+    """
     response = get_business(API_KEY, business_id)
 
-    places = []
-
+    print(u'Result for business "{0}" found:'.format(business_id))
+    #pprint.pprint(response, indent=2) 
+   
     if (len(businesses) < 3):
 
         size = len(businesses)
         for x in range(size):
-            places.append([businesses[x]['name'], businesses[x]['rating'], businesses[x]['price'], businesses[x]['image_url']])
+            print([businesses[x]['name'], businesses[x]['rating'], businesses[x]['price'], businesses[x]['image_url']])
 
     else:
+        
         for x in range(3):
-            places.append([businesses[x]['name'], businesses[x]['rating'], businesses[x]['price'], businesses[x]['image_url']])
-    
-    return places
+            print([businesses[x]['name'], businesses[x]['rating'], businesses[x]['price'], businesses[x]['image_url']])
 
-def search_result(term, location, price, radius):
+    
+
+def main():
+
+    term = "sushi" 
+    location = "200 University Ave W, Waterloo, ON N2L 3G1"
+    price = "2"
+    radius = "10000"
 
     try:
-        return query_api(term, location, price, radius)
+        query_api(term, location, price, radius)
     except HTTPError as error:
         sys.exit(
             'Encountered HTTP error {0} on {1}:\n {2}\nAbort program.'.format(
@@ -140,3 +151,7 @@ def search_result(term, location, price, radius):
                 error.read(),
             )
         )
+
+
+if __name__ == '__main__':
+    main()

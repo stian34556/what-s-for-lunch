@@ -3,5 +3,20 @@
 {% block title %} Lunch Picker {% endblock %}
 
 {% block body %}
-    HI
+    
+    {% for item in results %}
+        
+        {% for place in item %}
+
+            {% if place == item[3] %}
+                <img src={{place}} />
+            {% else %}
+                <p> {{place}} </p>
+            {% endif %}
+
+        {% endfor %}
+        
+    {% endfor %}
+
 {% endblock %}
+

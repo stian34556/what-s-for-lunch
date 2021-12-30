@@ -5,20 +5,20 @@
 {% block body %}
     <h1>Whats for lunch?</h1>
     <form action="/find" method = "post">
-        <input autocomplete="off" placeholder="Food" type = "text" name = "Food">
-        <input autocomplete="off" placeholder="Location" type = "text" name = "Location">
         <select name = "suggested">
             <option disable selected>Suggested Searches</option>
             {% for food in suggested %}
             <option> {{ food }}</option>
             {% endfor %}
         </select>
+        <input autocomplete="off" placeholder="Location" type = "text" name = "Location">
         <select name = "price">
             <option disable selected>Price Range</option>
             <option>$</option>
             <option>$$</option>
             <option>$$$</option>
         </select>
+        <input autocomplete="off" placeholder="radius" type = "text" name = "radius">
         <input type = "submit" value="search">
     </form>
 {% endblock %}
