@@ -1,0 +1,22 @@
+.greeting{
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.welcome{
+    font-size: 36px;
+}
+
+.start-button{
+    padding: 15px;
+    font-size: 24px;
+    margin: 50px auto 50px auto;
+    width: 225px;
+}
+
+.logout-button{
+    padding: 15px;
+    font-size: 24px;
+    margin: 0 auto 50px auto;
+    width: 225px;
+}

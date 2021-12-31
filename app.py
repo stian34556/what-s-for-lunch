@@ -9,14 +9,13 @@ FOOD = [
     "Korean","Mexican","Vegetarian","Vietnamese"
 ]
 
-@app.route("/login", methods = ["POST", "GET"])
+@app.route("/login.html", methods = ["POST", "GET"])
 def login():
     return render_template("login.html")
 
-@app.route('/sign-up', methods=['GET', 'POST'])
-def sign_up():
-    return render_template("sign_up.html")
-
+@app.route('/welcome.html', methods=['GET', 'POST'])
+def welcome():
+    return render_template("welcome.html")
 
 @app.route("/")
 def home():
