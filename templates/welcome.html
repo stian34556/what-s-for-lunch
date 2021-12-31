@@ -28,9 +28,7 @@
 </head>
 <body>
     <center><div style="margin:100px">
-        <span id="user" class="greeting">Hello, < email-id ></Email-id></span>
         <div class="welcome"><span>Welcome.</span></div><br/>
-        <a href="set-goal.html"><button class="start-button">Let's get started!</button></a><br/>
         <button class="logout-button" onclick="logout()">Logout</button>
     </div></center>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -42,7 +40,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
 
     <script src="{{url_for('static', filename='firebase.js')}}"></script>
-        <script src="{{url_for('static', filename='welcome.js')}}"></script>
+    <script src="{{url_for('static', filename='welcome.js')}}"></script>
 </body>
 </html>
 
