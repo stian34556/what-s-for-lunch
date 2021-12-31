@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %} welcome {% endblock %}
+{% block title %} Account Info {% endblock %}
 
 {% block body %}
 
@@ -28,7 +28,8 @@
 </head>
 <body>
     <center><div style="margin:100px">
-        <div class="welcome"><span>Welcome.</span></div><br/>
+        <span id="user" class="greeting">Hello, < email-id ></Email-id></span>
+        <div class="welcome"><span>Welcome to Foodi!</span></div><br/>
         <button class="logout-button" onclick="logout()">Logout</button>
     </div></center>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
