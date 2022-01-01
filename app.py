@@ -3,6 +3,8 @@ import yelp_api
 
 app = Flask(__name__)
 
+login = False
+
 FOOD = [
     "American","Asian", "Barbecue","Chinese", "European",
     "Fast Food","French","Halal", "Italian", "Japanese",
@@ -20,6 +22,10 @@ def welcome():
 @app.route("/")
 def home():
     return render_template("home.html", suggested=FOOD)
+
+@app.route("/index")
+def index():
+    return render_template("index.html")    
 
 @app.route("/find", methods = ["POST"])
 def find():
