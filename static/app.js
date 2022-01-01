@@ -22,8 +22,17 @@
     }
 
     function getUserAddressBy(lat, long) {
-        console.log(lat)
-        console.log(long)
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var address = JSON.parse(this.responseText)
+                input.value = address.results[0].formatted_address
+                locatorSection.classList.remove("loading")
+            }
+        };
+        xhttp.open("GET", "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyAP9UtO_JjrLk-VBPx44zCRWs1xWFQI334", true);
+        xhttp.send();
     }
 
     function setAddressToInputField(address) {
