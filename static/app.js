@@ -35,11 +35,6 @@
         xhttp.send();
     }
 
-    function setAddressToInputField(address) {
-
-        input.value = address
-        locatorSection.classList.remove("loading")
-    }
 
     var defaultBounds = new google.maps.LatLngBounds(
         new google.maps.LatLng(45.4215296, -75.6971931),
