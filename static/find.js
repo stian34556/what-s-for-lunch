@@ -13,8 +13,8 @@ function add_to_fav(num){
         } else if (num == 2) {
             title = document.getElementById("two").innerHTML;
             const FoodRef = firebase.firestore().collection("users").doc(user.uid)
-            .add({
-                title: title,
+            .update({
+                Restaurant: firebase.firestore.FieldValue.arrayUnion(title),
             })
             .then((ref) => {
                 
@@ -22,8 +22,8 @@ function add_to_fav(num){
         } else {
             title = document.getElementById("three").innerHTML;
             const FoodRef = firebase.firestore().collection("users").doc(user.uid)
-            .add({
-                title: title,
+            .update({
+                Restaurant: firebase.firestore.FieldValue.arrayUnion(title),
             })
             .then((ref) => {
               
