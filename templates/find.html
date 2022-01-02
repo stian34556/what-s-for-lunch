@@ -11,7 +11,21 @@
             {% if place == item[3] %}
                 <img src={{place}} />
             {% else %}
-                <p> {{place}} </p>
+            
+                {% if item == results[0] %}
+
+                    <p id = "one"> {{place}} </p>
+
+                {% elif item == results[1] %}
+
+                    <p id = "two"> {{place}} </p>
+
+                {% else %}
+
+                    <p id = "three"> {{place}} </p>
+
+                {% endif %}    
+
             {% endif %}
 
         {% endfor %}
