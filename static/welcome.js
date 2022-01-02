@@ -1,5 +1,3 @@
-const db = firebase.firestore();
-
 firebase.auth().onAuthStateChanged((user)=> {  
     if (!user) {
         location.replace("login.html")
@@ -18,7 +16,6 @@ firebase.auth().onAuthStateChanged((user)=> {
             console.log(key + " -> " + doc.data()[key])
             json_to_html_tag.innerHTML += "Restaurant Name: " + key + " Rating: " + doc.data()[key] + "<br><br>";
         }
-
 
         });
 

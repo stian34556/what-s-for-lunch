@@ -15,8 +15,13 @@
             {% endif %}
 
         {% endfor %}
-        
+        <button onclick="add_to_fav()" class="btn btn-warning" id="">Save</button>
     {% endfor %}
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
 
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="{{url_for('static', filename='firebase.js')}}"></script>
+    <script src="{{url_for('static', filename='find.js')}}"></script>
 {% endblock %}
-
