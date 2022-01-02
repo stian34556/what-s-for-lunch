@@ -4,15 +4,22 @@ firebase.auth().onAuthStateChanged((user)=> {
     if (!user) {
         location.replace("login.html")
     } else {
-        const bookRef = firebase
+        const FoodRef = firebase
         .firestore()
         .collection("users")
-        .doc("test");
+        .doc(user.uid);
 
-        bookRef.get().then((doc) => {
+        FoodRef.get().then((doc) => {
         if (!doc.exists) return;
-        console.log("Document data:", doc.data());
-        // Document data: { title: 'The Great Gatsby' }
+
+        json_to_html_tag.innerHTML =  "Fav Restaurant <br><br>";
+
+        for (var key of Object.keys(doc.data())) {
+            console.log(key + " -> " + doc.data()[key])
+            json_to_html_tag.innerHTML += "Restaurant Name: " + key + " Rating: " + doc.data()[key] + "<br><br>";
+        }
+
+
         });
 
 
