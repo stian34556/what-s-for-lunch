@@ -29,7 +29,13 @@
             {% endif %}
 
         {% endfor %}
-        <button onclick="add_to_fav()" class="btn btn-warning" id="">Save</button>
+            {% if item == results[0] %}
+                <button onclick="add_to_fav(1)" class="btn btn-warning">Save</button>
+            {% elif item == results[1] %}
+                <button onclick="add_to_fav(2)" class="btn btn-warning" id="">Save</button>
+            {% else %}
+                <button onclick="add_to_fav(3)" class="btn btn-warning" id="">Save</button>
+            {% endif %} 
     {% endfor %}
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
 
