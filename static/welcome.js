@@ -15,7 +15,7 @@ firebase.auth().onAuthStateChanged((user)=> {
         for (var key of Object.keys(doc.data())) {
             console.log(key + " -> " + doc.data()[key])
             for (var test of doc.data()[key]) {
-                json_to_html_tag.innerHTML += "Restaurant Name: " + test + "<br><br>";
+                json_to_html_tag.innerHTML += "Restaurant Name: " + test + " kjhg " + "<br><br>";
             
             
             }

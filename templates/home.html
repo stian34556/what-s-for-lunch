@@ -2,29 +2,11 @@
 
 <html lang="en">
     <head>
-
         <meta name="viewport" content="intitial-scale=1, width=device-width">
         <title>{% block title %} {% endblock %}</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <style>
-            .container {
-                min-height: 100vh;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-            }
-
-            #locator-input-section {
-                width: 100%;
-                margin: 10px;
-                max-width: 600px;
-
-            }
-        </style>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -39,30 +21,65 @@
             </div>
           </nav>
           
-        <h1>Whats for lunch?</h1>
-        <form action="/find" method = "post">
-            <select name = "suggested">
-                <option disable selected>Suggested Searches</option>
-                {% for food in suggested %}
-                <option> {{ food }}</option>
-                {% endfor %}
-            </select>
 
-            <div class="ui icon big input" id="locator-input-section">
-                <input type="text" placeholder="Enter Your Address" id="autocomplete" name = "Location"/>
-                <i aria-hidden="true" class="dot circle outline link icon" id="locator-button"></i>
-            </div> 
+          <section class="p-5" style="background: rgba(254, 166, 63, 0.38);">
+            <div class="container">
+              
+                <div>
+                    <h1>What's for <span class="text-warning" style="color: #FEA63F;"> lunch?</span></h1>
+                </div>
 
-            <select name = "price">
-                <option disable selected>Price Range</option>
-                <option>$</option>
-                <option>$$</option>
-                <option>$$$</option>
-            </select>
-            <input autocomplete="off" placeholder="radius" type = "text" name = "radius">
-            <input type = "submit" value="search">
-        </form>
+                <div style="margin-top: 50px;">
+                    <form action="/find" method = "post">
+                        <select name = "suggested" >
+                            <option disable selected>Suggested Searches</option>
+                            {% for food in suggested %}
+                            <option> {{ food }}</option>
+                            {% endfor %}
+                        </select>
 
+                        <span class="dropdown">
+                            <button name="suggested" class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                              Suggested Searches
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </span>
+
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              Action
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#">Action</a></li>
+                              <li><a class="dropdown-item" href="#">Another action</a></li>
+                              <li><a class="dropdown-item" href="#">Something else here</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+    
+                        <div class="ui icon big input" id="locator-input-section;">
+                            <input type="text" placeholder="Enter Your Address" id="autocomplete" name = "Location"/>
+                            <i aria-hidden="true" class="dot circle outline link icon" id="locator-button"></i>
+                        </div> 
+        
+                        <select name = "price">
+                            <option disable selected>Price Range</option>
+                            <option>$</option>
+                            <option>$$</option>
+                            <option>$$$</option>
+                        </select>
+                        <input autocomplete="off" placeholder="radius" type = "text" name = "radius">
+                        <input type = "submit" value="search">
+                    </form>
+                </div>
+              
+            </div>
+          </section>
 
     </body>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP9UtO_JjrLk-VBPx44zCRWs1xWFQI334&libraries=places">
