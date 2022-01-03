@@ -1,8 +1,3 @@
-const auth = getAuth();
-const google_signin = document.getElementById("google_signin");
-const provider = new firebase.auth.GoogleAuthProvider();
-google_signin.onclick = () => auth.signInWithPopup(provider);
-
 document.getElementById("loginForm").addEventListener("submit",(event)=>{
     event.preventDefault()
 })

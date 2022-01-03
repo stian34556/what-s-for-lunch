@@ -7,6 +7,7 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -26,58 +27,78 @@
             <div class="container">
               
                 <div>
-                    <h1>What's for <span class="text-warning" style="color: #FEA63F;"> lunch?</span></h1>
+                    <h1>What's for <span style="color: #FEA63F;"> lunch?</span></h1>
                 </div>
 
                 <div style="margin-top: 50px;">
                     <form action="/find" method = "post">
-                        <select name = "suggested" >
+                        <div class="ui icon big input" id="locator-input-section;">
+                            <input type="text" placeholder="Location" id="autocomplete" name = "Location" />
+                            <i aria-hidden="true" class="dot circle outline link icon" id="locator-button"></i>
+                        </div> 
+                        <br>
+                        <br>
+                        
+                        <select name="suggested" class="form-select" aria-label="Default select example" style="display:inline-block; width:auto; background-color: transparent; border: none; margin-right: 10px;">
                             <option disable selected>Suggested Searches</option>
                             {% for food in suggested %}
                             <option> {{ food }}</option>
                             {% endfor %}
                         </select>
 
-                        <span class="dropdown">
-                            <button name="suggested" class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                              Suggested Searches
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </span>
-
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                              Action
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">Action</a></li>
-                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-    
-                        <div class="ui icon big input" id="locator-input-section;">
-                            <input type="text" placeholder="Enter Your Address" id="autocomplete" name = "Location"/>
-                            <i aria-hidden="true" class="dot circle outline link icon" id="locator-button"></i>
-                        </div> 
-        
-                        <select name = "price">
+                        <select name="price" class="form-select" aria-label="Default select example" style="display:inline-block; width:auto; background-color: transparent; border: none; margin-right: 16px;">
                             <option disable selected>Price Range</option>
                             <option>$</option>
                             <option>$$</option>
                             <option>$$$</option>
                         </select>
-                        <input autocomplete="off" placeholder="radius" type = "text" name = "radius">
-                        <input type = "submit" value="search">
+
+                        <input type="text" placeholder="radius" style="display:inline-block; width:auto; background-color: transparent; color:black; border: none;">
+                        <button type="submit" value="search" class="btn btn-outline" style="display:inline-block; width:auto; background-color: #FEA63F; background-size: 30px 20px;border: none;">Search</button>
+                    
+                        <br><br>
                     </form>
                 </div>
-              
+  
+            </div>
+          </section>
+          <br><br>
+          <section class="p-5">
+            <div class="container">
+              <div class="row text-center g-4">
+                <div class="col-md">
+                    <img src="static/images/american.png" width="300" height="300" style="box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);">
+                    <h3 class="text-light" style="position:absolute; top:20px; left: 40%;">American</h3>
+                </div>
+                <div class="col-md">
+                    <img src="static/images/chinese.png" width="300" height="300">
+                    <h3 class="text-light" style="position:absolute; top:20px; left: 40%;">Chinese</h3>
+                </div>
+                <div class="col-md">
+                    <img src="static/images/italian.png" width="300" height="300">
+                    <h3 class="text-light" style="position:absolute; top:20px; left: 40%;">Italian</h3>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <br><br>
+          <section class="p-5">
+            <div class="container">
+              <div class="row text-center g-4">
+                <div class="col-md">
+                    <img src="static/images/japanese.png" width="300" height="300" style="box-shadow: inset ;">
+                    <h3 class="text-light" style="position:absolute; top:20px; left: 40%;">Japanese</h3>
+                </div>
+                <div class="col-md">
+                    <img src="static/images/korean.png" width="300" height="300">
+                    <h3 class="text-light" style="position:absolute; top:20px; left: 40%;">Korean</h3>
+                </div>
+                <div class="col-md">
+                    <img src="static/images/mexican.png" width="300" height="300">
+                    <h3 class="text-light" style="position:absolute; top:20px; left: 40%;">Mexican</h3>
+                </div>
+              </div>
             </div>
           </section>
 
@@ -87,6 +108,8 @@
     <script src="{{url_for('static', filename='app.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>
 
