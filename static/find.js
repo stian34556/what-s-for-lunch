@@ -1,6 +1,16 @@
 function add_to_fav(num){
     var user = firebase.auth().currentUser;
     if (user) {
+        
+        const usersRef = firebase.firestore().collection("users").doc(user.uid)
+
+        usersRef.get()
+        .then((docSnapshot) => {
+            if (!docSnapshot.exists) {
+                usersRef.set({ Restaurant : [] })
+            } 
+        });
+
         if (num == 1) {
             title = document.getElementById("one").innerHTML;
             const FoodRef = firebase.firestore().collection("users").doc(user.uid)  
