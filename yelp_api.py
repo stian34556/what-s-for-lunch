@@ -108,7 +108,7 @@ def query_api(term, location, price, radius):
 
     if not businesses:
         print(u'No businesses for {0} in {1} found.'.format(term, location))
-        return
+        return "none"
 
     business_id = businesses[0]['id']
 

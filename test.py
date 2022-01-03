@@ -136,7 +136,7 @@ def query_api(term, location, price, radius):
 
 def main():
 
-    term = "sushi" 
+    term = "sushi + food" 
     location = "200 University Ave W, Waterloo, ON N2L 3G1"
     price = "2"
     radius = "10000"

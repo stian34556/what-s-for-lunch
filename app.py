@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 import yelp_api
 
 app = Flask(__name__)
@@ -31,6 +31,8 @@ def index():
 def find():
     
     term = request.form.get("suggested")
+    term += "+ food"
+
     location = request.form.get("Location")
     price = request.form.get("price")
     radius = request.form.get("radius")
@@ -44,6 +46,9 @@ def find():
         price = yelp_api.DEFAULT_PRICE
     radius = "10000"
     results = yelp_api.search_result(term, location, price, radius)
-    print(results)
+    
+    if (results == "none"):
+        return redirect(url_for('home'))
 
-    return render_template("find.html", results = results)
+    else:
+        return render_template("find.html", results = results)
