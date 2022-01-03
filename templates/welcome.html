@@ -27,15 +27,27 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/welcome.css') }}">
 </head>
 <body>
-    <center><div style="margin:100px">
-        <span id="user" class="greeting">Hello, <email-id ></Email-id></span>
-        <div class="welcome"><span>Welcome to Foodi!</span></div><br/>
-        <button class="logout-button" onclick="logout()">Logout</button>
-    </div></center>
-
-
-    <h1 id = json_to_html_tag></h1>
-
+    <section class="p-5 p-lg-0 pt-lg-5 text-center text-sm-start" style="background: rgba(254, 166, 63, 0.38);" >
+      <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+          <div>
+            <h1 id="user" class="greeting">Hello, <email-id ></Email-id></h1>
+            <div class="welcome"><span style="color: #FEA63F;">Welcome to Foodi!</span></div><br/>
+            <button type="button" class="btn btn-outline-warning" onclick="logout()">Logout</button>
+          </div>
+          <img
+            class="img-fluid w-50 d-none d-sm-block"
+            src="static/images/welcome.png"
+            alt=""
+            />
+        </div>
+      </div>
+    </section>
+    <br>
+    <div class="container">
+        <ul class="list-group list-group-flush" id = json_to_html_tag> 
+        </ul>
+    </div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
