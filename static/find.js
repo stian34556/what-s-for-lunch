@@ -1,4 +1,4 @@
-function add_to_fav(num){
+function add_to_fav(num, name){
     var user = firebase.auth().currentUser;
     if (user) {
         

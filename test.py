@@ -136,10 +136,10 @@ def query_api(term, location, price, radius):
 
 def main():
 
-    term = "food" 
-    location = "200 University Ave W, Waterloo, ON N2L 3G1"
+    term = "Halal + food" 
+    location = " 3000 Pinewood Ave, Coquitlam, BC V3B 7Y7"
     price = "2"
-    radius = "10000"
+    radius = "5000"
 
     try:
         query_api(term, location, price, radius)

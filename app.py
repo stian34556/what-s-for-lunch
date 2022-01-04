@@ -45,7 +45,8 @@ def find():
         price = "3"
     else:
         price = yelp_api.DEFAULT_PRICE
-    radius = "10000"
+     
+    print(radius)
     results = yelp_api.search_result(term, location, price, radius)
 
     random_price = str(random.randint(1, 3))
