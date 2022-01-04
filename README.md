@@ -10,7 +10,24 @@
 
 <!-- Description -->
 ## Description
-When your hungry, plz use
+When you have trouble deciding where to eat, Foodi is the solution.
+Foodi gives you recommendations based on your location, category of item you want to eat, price range and how far to walk.
+
+Home Page:
+
+
+Login page:
+
+
+Welcome page:
+
+
+connected to database
+
+
+Search page:
+
+
 
 <!-- Setup -->
 ### Setup and Installation
