@@ -17,24 +17,23 @@
             <div class="row gx-5">
               <div class="col">
                   <div class="p-3 border bg-light">
-                    
-                    <p id = "one"> {{results[0][0]}} </p>
-                    <p> {{results[0][1]}} </p>
-                    <p> {{results[0][2]}} </p>
-                    <img src={{results[0][3]}} />
-                    <button onclick="add_to_fav(1)" class="btn btn-warning">Save</button>
-
+                    <h5 id = "one"> {{results[0][0]}} 
+                        <button onclick="add_to_fav(1)" class="btn btn-warning float-right">Save</button>
+                    </h5>
+                    <p> Rating: {{results[0][1]}} </p>
+                    <p> Price: {{results[0][2]}} </p>
+                    <img src={{results[0][3]}} style="width: 100%"/>
                     </div>
               </div>
               <div class="col">
                 <div class="p-3 border bg-light"> 
                     
-                    <p id = "two"> {{results[1][0]}} </p>
-                    <p> {{results[1][1]}} </p>
-                    <p> {{results[1][2]}} </p>
-                    <img src={{results[1][3]}} />
-                    <button onclick="add_to_fav(2)" class="btn btn-warning">Save</button>
-                
+                    <h5 id = "two"> {{results[1][0]}}
+                        <button onclick="add_to_fav(2)" class="btn btn-warning float-right">Save</button>
+                    </h5>
+                    <p> Rating: {{results[1][1]}} </p>
+                    <p> Price: {{results[1][2]}} </p>
+                    <img src={{results[1][3]}} style="width: 100%"/>                
                 </div>
               </div>
             </div>
@@ -45,17 +44,17 @@
               <div class="col">
                <div class="p-3 border bg-light">
 
-                    <p id = "three"> {{results[1][0]}} </p>
-                    <p> {{results[2][1]}} </p>
-                    <p> {{results[2][2]}} </p>
-                    <img src={{results[2][3]}} />
-                    <button onclick="add_to_fav(3)" class="btn btn-warning">Save</button>
-
-
+                    <h5 id = "three"> {{results[1][0]}} 
+                        <button onclick="add_to_fav(3)" class="btn btn-warning float-right">Save</button>
+                    </h5>
+                    <p style=""> Rating: {{results[2][1]}} </p>
+                    <p> Price: {{results[2][2]}} </p>
+                    <img src={{results[2][3]}} style="width: 100%"/>
                </div>
               </div>
               <div class="col">
-                <div class="p-3 border bg-light">Custom column padding</div>
+                <div class="p-3 border bg-light border-warning"> <span style="color: #FEA63F;">Foodi Rec</span>
+                </div>
               </div>
             </div>
           </div>
