@@ -26,18 +26,14 @@
           {% with message = get_flashed_messages() %}
 
             {% if message %}
-
-              {% for msg in message %}
-
-                <p>{{msg}}</p>
-
-              {% endfor %}
-
+                <script>
+                  window.onload = function() {
+                    alert("No restaurants found")
+                  }
+                </script>
             {% endif %}
-
           {% endwith %}
 
-          
           <section class="p-5" style="background: rgba(254, 166, 63, 0.38);">
             <div class="container">
               

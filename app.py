@@ -54,7 +54,7 @@ def find():
     random_price = int(random_price)
 
     if (results == "none"):
-        flash('no restaurant were found according to your specifications', 'danger')
+        flash('none')
         return redirect(url_for('home'))
 
     else:
