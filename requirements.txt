@@ -1,20 +1,3 @@
-alabaster==0.7.12
-anaconda-client==1.7.2
-anaconda-navigator==1.10.0
-anaconda-project==0.8.3
-applaunchservices==0.2.1
-appnope @ file:///opt/concourse/worker/volumes/live/0291c9e1-4b15-459f-623e-2770f55be269/volume/appnope_1594338395037/work
-appscript @ file:///opt/concourse/worker/volumes/live/50ca4c96-3090-40bb-6981-3a6114ed0af4/volume/appscript_1594840187551/work
-argh==0.26.2
-argon2-cffi @ file:///opt/concourse/worker/volumes/live/59af29ac-4890-416e-7ab7-794f8d6f7ecd/volume/argon2-cffi_1596828548321/work
-asn1crypto @ file:///tmp/build/80754af9/asn1crypto_1596577642040/work
-astroid @ file:///opt/concourse/worker/volumes/live/21fd14a9-2a7e-484b-7394-5a9912cdcf80/volume/astroid_1592498459180/work
-astropy==4.0.2
-async-generator==1.10
-atomicwrites==1.4.0
-attrs @ file:///tmp/build/80754af9/attrs_1604765588209/work
-autopep8 @ file:///tmp/build/80754af9/autopep8_1596578164842/work
-Babel @ file:///tmp/build/80754af9/babel_1605108370292/work
 backcall==0.2.0
 backports.functools-lru-cache==1.6.1
 backports.shutil-get-terminal-size==1.0.0
@@ -32,7 +15,6 @@ bs4==0.0.1
 CacheControl==0.12.10
 cachetools==4.2.4
 certifi==2020.6.20
-cffi @ file:///opt/concourse/worker/volumes/live/b9607b09-b777-4ff7-53dc-287727eb8574/volume/cffi_1600699191154/work
 chardet==3.0.4
 charset-normalizer==2.0.9
 click==7.1.2
@@ -105,13 +87,6 @@ Jinja2==2.11.2
 joblib @ file:///tmp/build/80754af9/joblib_1601912903842/work
 json5==0.9.5
 jsonschema @ file:///tmp/build/80754af9/jsonschema_1602607155483/work
-jupyter==1.0.0
-jupyter-client @ file:///tmp/build/80754af9/jupyter_client_1601311786391/work
-jupyter-console @ file:///tmp/build/80754af9/jupyter_console_1598884538475/work
-jupyter-core==4.6.3
-jupyterlab==2.2.6
-jupyterlab-pygments @ file:///tmp/build/80754af9/jupyterlab_pygments_1601490720602/work
-jupyterlab-server @ file:///tmp/build/80754af9/jupyterlab_server_1594164409481/work
 jws==0.1.3
 kaggle==1.5.12
 keyring @ file:///opt/concourse/worker/volumes/live/54fc3ec2-338b-44f5-5e13-d62afa6b5820/volume/keyring_1601490916376/work
@@ -141,7 +116,6 @@ nest-asyncio @ file:///tmp/build/80754af9/nest-asyncio_1605115881283/work
 networkx @ file:///tmp/build/80754af9/networkx_1598376031484/work
 nltk @ file:///tmp/build/80754af9/nltk_1592496090529/work
 nose @ file:///opt/concourse/worker/volumes/live/a029938e-1732-4cd8-5b98-0542283d158b/volume/nose_1594377915100/work
-notebook @ file:///opt/concourse/worker/volumes/live/be0f3504-189d-4bae-4e57-c5d6da73ffcd/volume/notebook_1601501605350/work
 numba @ file:///opt/concourse/worker/volumes/live/ae24c1ca-d916-4043-5919-a843fa33e451/volume/numba_1600084276085/work
 numexpr==2.7.1
 numpy @ file:///opt/concourse/worker/volumes/live/5572694e-967a-4c0c-52cf-b53d43e72de9/volume/numpy_and_numpy_base_1603491881791/work
@@ -150,8 +124,6 @@ oauth2client==3.0.0
 olefile==0.46
 openpyxl @ file:///tmp/build/80754af9/openpyxl_1598113097404/work
 packaging==20.4
-pandas @ file:///opt/concourse/worker/volumes/live/f14cf8c4-c564-4eff-4b17-158e90dbf88a/volume/pandas_1602088128240/work
-pandocfilters @ file:///opt/concourse/worker/volumes/live/c330e404-216d-466b-5327-8ce8fe854d3a/volume/pandocfilters_1605120442288/work
 parso==0.7.0
 partd==1.1.0
 path @ file:///opt/concourse/worker/volumes/live/fcdf620c-46d6-4284-4c1e-5b8c3bc6c5c6/volume/path_1596907417277/work
@@ -265,8 +237,3 @@ XlsxWriter @ file:///tmp/build/80754af9/xlsxwriter_1602692860603/work
 xlwings==0.20.8
 xlwt==1.3.0
 xmltodict==0.12.0
-yapf @ file:///tmp/build/80754af9/yapf_1593528177422/work
-zict==2.0.0
-zipp @ file:///tmp/build/80754af9/zipp_1604001098328/work
-zope.event==4.5.0
-zope.interface @ file:///opt/concourse/worker/volumes/live/de428e3b-00ba-4161-442e-b9e5d25e4219/volume/zope.interface_1602002489816/work
