@@ -21,6 +21,7 @@ git clone <repo-url>
 ```bash
 pip install -r requirements.txt
 ```
+Run app
 ```bash
 flask run
 ```
