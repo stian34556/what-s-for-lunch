@@ -13,20 +13,27 @@
 When you have trouble deciding where to eat, Foodi is the solution.
 Foodi gives you recommendations based on your location, category of item you want to eat, price range and how far to walk.
 
-Home Page:
+**Home Page:**
+
+![alt text](https://github.com/stian34556/what-s-for-lunch/blob/main/main.png)
 
 
-Login page:
+**Login page:** <br />
+Authenticated using Firebase
+
+![alt text](https://github.com/stian34556/what-s-for-lunch/blob/main/login.png)
 
 
-Welcome page:
-
-
+**Welcome page:** <br />
 connected to database
 
+![alt text](https://github.com/stian34556/what-s-for-lunch/blob/main/welcome.png)
 
-Search page:
 
+**Search page:** <br />
+Users can save restaurants they went to and they will show up on the welcome page
+
+![alt text](https://github.com/stian34556/what-s-for-lunch/blob/main/find.png)
 
 
 <!-- Setup -->
