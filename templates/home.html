@@ -10,6 +10,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     </head>
     <body>
+
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="/">Foodi</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,8 +22,22 @@
               </div>
             </div>
           </nav>
-          
 
+          {% with message = get_flashed_messages() %}
+
+            {% if message %}
+
+              {% for msg in message %}
+
+                <p>{{msg}}</p>
+
+              {% endfor %}
+
+            {% endif %}
+
+          {% endwith %}
+
+          
           <section class="p-5" style="background: rgba(254, 166, 63, 0.38);">
             <div class="container">
               

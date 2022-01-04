@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 import yelp_api
 import random
 
 app = Flask(__name__)
+app.secret_key = "hello"
 
 login = False
 
@@ -50,8 +51,10 @@ def find():
 
     random_price = str(random.randint(1, 3))
     rec = yelp_api.search_result("food", location, random_price, radius)
+    random_price = int(random_price)
 
     if (results == "none"):
+        flash('no restaurant were found according to your specifications', 'danger')
         return redirect(url_for('home'))
 
     else:

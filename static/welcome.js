@@ -31,6 +31,8 @@ firebase.auth().onAuthStateChanged((user)=> {
                     test = test.replace("add_to_fav(2)", "add_to_fav(" + count + ")");
                 } else if (test.includes("add_to_fav(3)")) {
                     test = test.replace("add_to_fav(3)", "add_to_fav(" + count + ")");
+                } else if (test.includes("add_to_fav(4)")) {
+                    test = test.replace("add_to_fav(4)", "add_to_fav(" + count + ")");
                 }
 
                 

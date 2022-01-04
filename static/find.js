@@ -29,15 +29,30 @@ function add_to_fav(num, name){
             .then((ref) => {
                 
           });
-        } else {
+        } else if (num == 3) {
+
             title = document.getElementById("three").innerHTML;
             const FoodRef = firebase.firestore().collection("users").doc(user.uid)
             .update({
                 Restaurant: firebase.firestore.FieldValue.arrayUnion(title),
             })
             .then((ref) => {
+                  
+            });
+
+        } else {
+
+            title = document.getElementById("four").innerHTML;
+            title = title.replace('<span style="color: #FEA63F;">Foodi Rec</span>','');
+            const FoodRef = firebase.firestore().collection("users").doc(user.uid)
+            .update({
+                Restaurant: firebase.firestore.FieldValue.arrayUnion(title),
+            })
+            .then((ref) => {
+                  
+            });
+
+        }
               
-          });
-        }      
     }
 }
