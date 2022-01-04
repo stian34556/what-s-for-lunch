@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import yelp_api
+import random
 
 app = Flask(__name__)
 
@@ -46,9 +47,14 @@ def find():
         price = yelp_api.DEFAULT_PRICE
     radius = "10000"
     results = yelp_api.search_result(term, location, price, radius)
-    
+
+    random_price = str(random.randint(1, 3))
+    rec = yelp_api.search_result("food", location, random_price, "5000")
+
+    print(rec)
+
     if (results == "none"):
         return redirect(url_for('home'))
 
     else:
-        return render_template("find.html", results = results)
+        return render_template("find.html", results = results, rec = rec, random_price = random_price)

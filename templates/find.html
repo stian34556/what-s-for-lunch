@@ -44,7 +44,7 @@
               <div class="col">
                <div class="p-3 border bg-light">
 
-                    <h5 id = "three"> {{results[1][0]}} 
+                    <h5 id = "three"> {{results[2][0]}} 
                         <button onclick="add_to_fav(3)" class="btn btn-warning float-right">Save</button>
                     </h5>
                     <p style=""> Rating: {{results[2][1]}} </p>
@@ -54,6 +54,14 @@
               </div>
               <div class="col">
                 <div class="p-3 border bg-light border-warning"> <span style="color: #FEA63F;">Foodi Rec</span>
+
+                  <h5 id = "four"> {{rec[0][0]}} 
+                      <button onclick="add_to_fav(4)" class="btn btn-warning float-right">Save</button>
+                  </h5>
+                  <p style=""> Rating: {{rec[0][1]}} </p>
+                  <p> Price: {{rec[0][2]}} </p>
+                  <img src={{rec[0][3]}} style="width: 100%"/>
+                  
                 </div>
               </div>
             </div>
