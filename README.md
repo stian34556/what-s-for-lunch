@@ -15,9 +15,12 @@ When your hungry, plz use
 <!-- Setup -->
 ### Setup and Installation
 
-
+```bash
 git clone <repo-url>
+```
+```bash
 pip install -r requirements.txt
+```
 
 ## Running The App
 flask run
