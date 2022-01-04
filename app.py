@@ -46,13 +46,10 @@ def find():
     else:
         price = yelp_api.DEFAULT_PRICE
      
-    print(radius)
     results = yelp_api.search_result(term, location, price, radius)
 
     random_price = str(random.randint(1, 3))
-    rec = yelp_api.search_result("food", location, random_price, "5000")
-
-    print(rec)
+    rec = yelp_api.search_result("food", location, random_price, radius)
 
     if (results == "none"):
         return redirect(url_for('home'))
