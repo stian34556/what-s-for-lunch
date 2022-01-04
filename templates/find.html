@@ -4,11 +4,40 @@
 
 {% block body %}
 
-    <section style="background: rgba(254, 166, 63, 0.38); background-size: 50%;">
-        <h1>Your Results</h1>
+    <section>
+        <div class="d-inline-flex p-2"style="background: rgba(254, 166, 63, 0.38); margin-top: 80px">
+            <h1>&emsp; Your Results &emsp; &emsp; &emsp;</h1>
+        </div>
     </section>
+
+    <br><br><br>
     
-    {% for item in results %}
+    <section>
+        <div class="container overflow-hidden">
+            <div class="row gx-5">
+              <div class="col">
+               <div class="p-3 border bg-light">Custom column padding</div>
+              </div>
+              <div class="col">
+                <div class="p-3 border bg-light">Custom column padding</div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="container overflow-hidden">
+            <div class="row gx-5">
+              <div class="col">
+               <div class="p-3 border bg-light">Custom column padding</div>
+              </div>
+              <div class="col">
+                <div class="p-3 border bg-light">Custom column padding</div>
+              </div>
+            </div>
+          </div>
+    </section>
+
+    <section>
+        {% for item in results %}
         
         {% for place in item %}
 
@@ -41,6 +70,9 @@
                 <button onclick="add_to_fav(3)" class="btn btn-warning" id="">Save</button>
             {% endif %} 
     {% endfor %}
+
+    </section>
+
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
