@@ -8,6 +8,8 @@
 
 <!-- Description -->
 ## Description
+Check out the website!
+https://whats-for-lunch2.herokuapp.com/  <br />
 When you have trouble deciding where to eat, Foodi is the solution.
 Foodi gives you recommendations based on your location, category of item you want to eat, price range and how far to walk.
 
